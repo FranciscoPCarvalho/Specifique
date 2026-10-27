@@ -1,4 +1,4 @@
-# SDD
+# Specifique - SDD
 
 Microframework leve de desenvolvimento orientado por especificações (SDD),
 com agentes de codificação e documentação Markdown versionável. O usuário
