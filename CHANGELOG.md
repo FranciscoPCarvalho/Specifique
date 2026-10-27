@@ -1,5 +1,18 @@
 # Evolução do Microframework SDD
 
+## v0.2-r3 — proposta para revisão — 2026-10-27
+
+- Carregamento progressivo de contexto para evitar leitura indiscriminada do acervo.
+- Distinção entre **specs em aberto** e **spec corrente** da interação.
+- Registro da **base da inspeção** no `plan.md`.
+- Preflight obrigatório após aprovação e antes da primeira task da revisão.
+- Resultados de preflight: `válido`, `desatualizado` ou `inconclusivo`.
+- Transições de estado determinísticas, incluindo distinção formal entre
+  `implementada` e `concluída`.
+- Handoff multi-spec: destaca trabalho corrente e resume outros trabalhos em aberto.
+- Roteiro de validação ampliado para testar contexto, preflight, concorrência de specs
+  e transições de estado.
+
 ## v0.2-r2 — proposta para revisão — 2026-10-27
 
 - Separação formal do ciclo em **inspeção → proposta → execução**.

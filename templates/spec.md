@@ -63,4 +63,4 @@ QA manual: não realizado. [Cenários e confirmação necessária, ou “não ap
 - Autor: não identificado.
 - Data da aprovação: não registrada.
 
-[Em revisões posteriores, registre somente mudanças materiais e o estado da aprovação vigente. `spec.md` é a fonte de verdade para autorização de execução.]
+[Em revisões posteriores, registre somente mudanças materiais e o estado da aprovação vigente. `spec.md` é a fonte de verdade para autorização de execução. Use as transições do protocolo: `proposta` → `em revisão` → `aprovada` → `em execução` → `implementada` → `concluída`, com `bloqueada`/`cancelada` quando aplicável. Uma spec em aberto não é necessariamente a spec corrente de toda interação.]

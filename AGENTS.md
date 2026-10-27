@@ -95,13 +95,17 @@ Aplique-o com as regras locais e com o bloco SDD vinculado à aplicação.
 Regras essenciais:
 
 - intenção de mudança relevante aciona o SDD mesmo sem palavra-chave;
+- contexto é carregado progressivamente, sem ler todo o acervo por padrão;
+- o projeto pode ter várias specs em aberto; a spec corrente é resolvida pela demanda;
 - inspeção pode ler o necessário, mas não implementar antes da aprovação;
 - `spec.md` é a autoridade de revisão, estado e aprovação;
 - `plan.md` descreve estratégia e `tasks.md` execução/evidências;
 - a proposta deve separar decisões pendentes de pressupostos e distinguir
   documentos já gerados de arquivos apenas previstos para alteração;
 - mudança material exige nova revisão e nova aprovação;
-- handoff deve representar o estado atual e próxima ação, não um diário;
+- após aprovação, preflight revalida as premissas materiais antes da primeira task;
+- transições de estado seguem o protocolo, incluindo distinção entre `implementada` e `concluída`;
+- handoff representa o trabalho corrente, outros trabalhos em aberto e próxima ação, não um diário;
 - QA, testes, commit, deploy e homologação só podem ser declarados com evidência.
 
 Não duplique aqui as regras detalhadas do protocolo. Se houver incompatibilidade

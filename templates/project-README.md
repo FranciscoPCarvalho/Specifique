@@ -20,18 +20,21 @@ dos artefatos. Preserve as entradas anteriores nas próximas inclusões.
 Na pasta da aplicação, descreva diretamente o que deseja, por exemplo:
 “Adicione autenticação com Google”. O agente segue três fases:
 
-1. **Inspeção:** lê o contexto necessário sem implementar.
+1. **Inspeção:** carrega contexto progressivamente e lê somente o necessário, sem implementar.
 2. **Proposta:** cria spec, plano e tarefas e apresenta resumo executivo com
    requisitos, escopo, plano, impactos, aceite, decisões pendentes,
    pressupostos, documentos gerados e arquivos previstos para alteração.
-3. **Execução:** somente após aprovação explícita da revisão vigente em
-   `spec.md`, executa uma task por vez e registra evidências.
+3. **Execução:** após aprovação explícita da revisão vigente em `spec.md`, faz
+   um preflight das premissas materiais; somente então executa uma task por vez
+   e registra evidências.
 
 Você pode consultar/editar os arquivos ou pedir ajustes antes de aprovar. Uma
-mudança material cria nova revisão. O handoff representa sempre o estado atual
-para retomada, sem acumular histórico cronológico. Para sistemas existentes,
-um mapeamento arquitetural é uma demanda separada e pode usar uma spec de
-descoberta.
+mudança material cria nova revisão. O projeto pode manter várias specs em
+aberto; o agente resolve a **spec corrente** pela demanda em tratamento, sem
+presumir uma única spec ativa global. O handoff representa o trabalho corrente
+e resume outros trabalhos em aberto, sem acumular histórico cronológico. Para
+sistemas existentes, um mapeamento arquitetural é uma demanda separada e pode
+usar uma spec de descoberta.
 
 Consulte `../docs/protocolo-operacional.md` a partir da raiz SDD.
 

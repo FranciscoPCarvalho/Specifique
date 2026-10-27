@@ -70,16 +70,19 @@ não cria a primeira spec, não executa a aplicação e não instala dependênci
 
 Depois da inicialização, não é necessário invocar comandos SDD. Abra a pasta
 da aplicação e descreva a mudança: “Adicione autenticação com Google”. O
-agente investiga, escreve **spec.md, plan.md e tasks.md** e apresenta no chat
-um **resumo executivo com caminhos dos arquivos**, incluindo objetivo, regras,
-plano, impactos, critérios de aceite e questões para confirmação. O formato
+agente carrega o contexto progressivamente, identifica a spec corrente quando houver,
+investiga somente o necessário, escreve **spec.md, plan.md e tasks.md** e apresenta
+no chat um **resumo executivo com caminhos dos arquivos**, incluindo objetivo,
+regras, plano, impactos, critérios de aceite e questões para confirmação. O formato
 de links clicáveis depende do agente e da IDE; os caminhos literais sempre
 devem ser mostrados.
 
 Você pode pedir detalhes, editar documentos e solicitar revisões. **Somente
-uma aprovação explícita registrada em `spec.md` para a revisão vigente** autoriza implementar; nova
-mudança material invalida essa aprovação até nova revisão. Cada task concluída
-atualiza evidências e um handoff conciso. O fluxo completo e os estados
+uma aprovação explícita registrada em `spec.md` para a revisão vigente** autoriza seguir para o preflight.
+Antes da primeira task, o agente revalida as premissas materiais do plano; mudança
+material encontrada exige revisão e nova aprovação. Cada task concluída atualiza
+evidências e um handoff conciso que destaca o trabalho corrente e resume outros
+trabalhos em aberto. O fluxo completo e os estados
 constam no [protocolo](docs/protocolo-operacional.md).
 
 Em projetos legados, após a inicialização, você pode solicitar separadamente

@@ -9,6 +9,10 @@ Spec: [spec.md](spec.md) · Tarefas: [tasks.md](tasks.md)
 
 > Este plano é válido somente para a revisão indicada de `spec.md`. A autorização de execução é registrada exclusivamente na spec.
 
+## Base da inspeção
+
+[Liste somente as fontes que fundamentaram materialmente a proposta: arquivos, docs, rotas, modelos, contratos e interfaces relevantes. Diferencie fonte verificada de informação fornecida pelo usuário. Se houver VCS, commit/hash pode ser registrado como evidência auxiliar, mas não é obrigatório.]
+
 ## Abordagem técnica
 
 [Explique arquitetura, modelagem, alternativas avaliadas e justificativas. Para descoberta, explique fontes, método de inspeção e entregáveis; não inclua modificações de produto.]
