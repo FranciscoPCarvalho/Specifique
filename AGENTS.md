@@ -88,77 +88,25 @@ reprocesse os templates personalizados existentes durante uma reinicialização.
 
 ## Trabalho em bases existentes
 
-O protocolo de intenção, revisão, aprovação, execução e sincronização está em
-[docs/protocolo-operacional.md](docs/protocolo-operacional.md). Aplique-o com
-as regras locais do projeto e com o bloco SDD vinculado à aplicação.
+O contrato completo de intenção, inspeção, proposta, aprovação, execução e
+sincronização está em [docs/protocolo-operacional.md](docs/protocolo-operacional.md).
+Aplique-o com as regras locais e com o bloco SDD vinculado à aplicação.
 
-**Intenção, não palavra-chave:** após a inicialização, solicitações naturais de
-mudança funcional, correção de comportamento ou refatoração relevante iniciam
-a preparação de spec/plano/tarefas, mesmo sem menção a SDD. Solicitações de
-mapeamento/documentação podem iniciar uma spec de descoberta. Não crie specs
-para perguntas, consultas informativas ou simples leitura de código; antes de
-alterar código, confirme se a demanda exige proposta e aprovação. Pequenas
-mudanças funcionais também exigem aprovação. Alterações editoriais estritamente
-triviais podem seguir regras locais, mas nunca contornar aprovações explícitas.
+Regras essenciais:
 
-**Revisão antes da implementação:** apresente no chat um resumo executivo
-com identificação/status/revisão, objetivo, regras/requisitos, plano técnico,
-impactos, critérios de aceite, riscos/dúvidas, caminhos navegáveis dos três
-artefatos e próxima ação. Diferencie fatos observados, hipóteses e decisões.
-Gere os arquivos primeiro; não anuncie arquivos que não foram gravados. Use
-links relativos ou referências de arquivo reconhecidas pelo agente/IDE quando
-suportadas e mostre sempre o caminho literal como alternativa. Não invente
-URLs `file://` nem afirme que o editor abrirá o link sem suporte confirmado.
+- intenção de mudança relevante aciona o SDD mesmo sem palavra-chave;
+- inspeção pode ler o necessário, mas não implementar antes da aprovação;
+- `spec.md` é a autoridade de revisão, estado e aprovação;
+- `plan.md` descreve estratégia e `tasks.md` execução/evidências;
+- a proposta deve separar decisões pendentes de pressupostos e distinguir
+  documentos já gerados de arquivos apenas previstos para alteração;
+- mudança material exige nova revisão e nova aprovação;
+- handoff deve representar o estado atual e próxima ação, não um diário;
+- QA, testes, commit, deploy e homologação só podem ser declarados com evidência.
 
-**Gate obrigatório:** só implemente depois de aprovação inequívoca da
-**revisão atual** de spec, plano e tarefas, registrada nos artefatos. Silêncio,
-criação de arquivos, aprovação de outro escopo e aprovação histórica não
-valem. Em caso de alteração substancial de escopo ou decisão arquitetural,
-interrompa a parte afetada e obtenha nova aprovação da revisão atualizada.
-Bloqueie a execução quando uma dúvida impactar requisitos, segurança, dados
-ou arquitetura e não houver decisão suficiente.
-
-**Integridade:** mantenha IDs estáveis, requisitos ligados a critérios de
-aceitação e tarefas, status coerentes e evidências verificáveis. A cada task
-tecnicamente concluída, registre os resultados em `tasks.md`, atualize os
-documentos quando houver decisão aprovada relevante, e sintetize a retomada no
-handoff. Não altere a spec só para justificar divergência do código. Marque
-bloqueios/documentos indisponíveis; nunca declare sincronização realizada sem
-acesso ao destino. Handoff é índice de estado e continuidade, não log extenso.
-
-
-Leia o índice e os documentos relevantes antes de propor alterações. Siga as
-instruções da aplicação para trabalhar no seu código. O fluxo é proposta →
-revisão de spec/plano/tarefas → aprovação → execução sequencial. Documentação
-histórica não representa aprovação de mudanças futuras. QA manual exige
-confirmação explícita para ser registrado como realizado.
-
-### Handoff obrigatório ao concluir tasks e specs
-
-Ao concluir tecnicamente cada task, atualize o arquivo de handoff do projeto
-(`handoff.md`, `HANDOFF.md` ou o nome já adotado) com o estado necessário para
-que outra pessoa possa continuar: resultado e comportamento implementado,
-decisões relevantes, arquivos/áreas afetados, testes e comandos com resultados,
-falhas ou limitações conhecidas, QA manual ainda pendente e próximo passo. Ao
-concluir uma spec, consolide no handoff o estado final de todas as tasks e as
-pendências remanescentes. Registre fatos; não declare QA, aprovação, commit,
-deploy ou homologação sem confirmação/evidência.
-
-Preserve as convenções, decisões e referências do handoff existente, mas não
-perpetue um histórico cronológico crescente: mova ou referencie registros
-detalhados em `tasks.md` ou documentos especializados. Em uma migração de
-handoff antigo, preserve o original em arquivo/versão identificável e confira
-a recuperabilidade de decisões, pendências e evidências antes de compactá-lo.
-Se o projeto ainda não
-tiver handoff, crie um em Markdown na raiz do projeto e inclua nele um caminho
-curto para retomar a SDD e a task/spec ativa. Registre a localização adotada no
-índice e nas tasks relevantes. Se o checkout ou o arquivo não estiver
-disponível, conclua a documentação que puder e registre explicitamente a
-limitação, sem inventar o conteúdo do handoff.
-
-Handoff serve à continuidade do trabalho e não substitui `tasks.md`, resultados
-de teste, QA manual ou fontes de código. Atualize-o em conjunto com o registro
-da task, antes de considerar concluída a etapa documental.
+Não duplique aqui as regras detalhadas do protocolo. Se houver incompatibilidade
+entre este resumo e o protocolo, interrompa a execução e reconcilie as instruções
+antes de alterar a aplicação.
 
 ## Saídas de comandos
 

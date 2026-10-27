@@ -5,11 +5,9 @@ Projeto: `{{PROJECT_ID}}`
 Tipo: [funcionalidade | correção | refatoração | descoberta | migração documental]  
 Status: proposta  
 Revisão: 1  
-Data: `{{DATE}}`  
-Aprovação da revisão vigente: pendente
+Data: `{{DATE}}`
 
-Fontes observadas: [caminhos relativos e referências, ou “a confirmar”].  
-Plano: [plan.md](plan.md) · Tarefas: [tasks.md](tasks.md).
+Plano: [plan.md](plan.md) · Tarefas: [tasks.md](tasks.md)
 
 ## Objetivo
 
@@ -17,38 +15,52 @@ Plano: [plan.md](plan.md) · Tarefas: [tasks.md](tasks.md).
 
 ## Escopo
 
-## Não escopo
+[O que faz parte desta proposta.]
+
+## Fora de escopo
+
+[O que explicitamente não será tratado nesta spec; use “não aplicável” quando irrelevante.]
 
 ## Estado atual observado
 
-[Diferencie observação verificada, informação do usuário e hipótese.]
+[Diferencie fato verificado, informação fornecida pelo usuário e hipótese. Registre fontes/caminhos relevantes.]
 
 ## Requisitos e regras de negócio
 
 - RF-001 — [regra/requisito; fonte ou hipótese identificada]
 
-[Para specs de descoberta, registre perguntas de levantamento e entregáveis documentais no lugar de requisitos funcionais artificiais.]
+[Para descoberta, registre perguntas e entregáveis documentais em vez de requisitos funcionais artificiais.]
 
 ## Critérios de aceitação
 
-- CA-001 — [resultado verificável; cobre RF-001 ou entregável de descoberta]
+- CA-001 — [resultado verificável; relacione ao requisito/entregável correspondente]
 
 ## Restrições, riscos e impactos
 
-[Segurança, dados, compatibilidade, permissões, regressões; justifique não aplicável.]
+[Segurança, dados, compatibilidade, permissões, regressões; justifique “não aplicável”.]
 
-## Testes e validação
+## Decisões pendentes
 
-Testes automatizados: não executados. [Estratégia e comandos previstos, quando aplicável.]  
-QA manual: não realizado. [Cenários e confirmação necessária, ou não aplicável justificado.]
+[Somente escolhas que bloqueiam aprovação por afetarem requisito, escopo, segurança, dados, contrato ou arquitetura relevante. Use “nenhuma”.]
 
-## Perguntas e decisões pendentes
+## Pressupostos
 
-[Se uma dúvida afetar escopo, arquitetura, segurança ou dados, aprovação bloqueada até resolução.]
+[Interpretações explícitas e reversíveis que podem ser aceitas junto com a proposta. Use “nenhum”.]
+
+## Testes e validação previstos
+
+Testes automatizados: não executados. [Estratégia/comandos previstos, quando aplicável.]  
+QA manual: não realizado. [Cenários e confirmação necessária, ou “não aplicável” justificado.]
 
 ## Aprovação e revisões
 
-- Revisão 1: proposta em `{{DATE}}`; aguardando aprovação explícita de spec, plano e tarefas.
-- Aprovação atual: pendente; manifestação: não registrada; data: não registrada.
+### Revisão 1
 
-[Em revisões posteriores, registre mudanças materiais, aprovação invalidada quando cabível e novo aceite. Não confunda aprovação histórica com autorização vigente.]
+- Estado: aguardando apresentação/aprovação.
+- Mudanças: proposta inicial.
+- Aprovação: pendente.
+- Manifestação: não registrada.
+- Autor: não identificado.
+- Data da aprovação: não registrada.
+
+[Em revisões posteriores, registre somente mudanças materiais e o estado da aprovação vigente. `spec.md` é a fonte de verdade para autorização de execução.]

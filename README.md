@@ -25,8 +25,7 @@ Abra a pasta SDD no agente e solicite:
 
 > Leia o AGENTS.md e inicialize o SDD no projeto localizado em `../meu-projeto`.
 
-O caminho pode ser absoluto ou relativo à pasta SDD. Por exemplo, se SDD e
-sigApp forem pastas irmãs, use `../sigApp`. Também são aceitos
+O caminho pode ser absoluto ou relativo à pasta SDD. Por exemplo, se SDD e o projeto forem pastas irmãs, use `../meu-projeto`. Também são aceitos
 caminhos com espaços, como `../Meu Projeto`. Não é necessário usar Git.
 
 O agente usará os [templates](templates/) e o procedimento em
@@ -78,7 +77,7 @@ de links clicáveis depende do agente e da IDE; os caminhos literais sempre
 devem ser mostrados.
 
 Você pode pedir detalhes, editar documentos e solicitar revisões. **Somente
-uma aprovação explícita da revisão vigente** autoriza implementar; nova
+uma aprovação explícita registrada em `spec.md` para a revisão vigente** autoriza implementar; nova
 mudança material invalida essa aprovação até nova revisão. Cada task concluída
 atualiza evidências e um handoff conciso. O fluxo completo e os estados
 constam no [protocolo](docs/protocolo-operacional.md).
@@ -104,14 +103,10 @@ dentro da base documental do projeto no SDD. A numeração começa em `0001`
 e segue o maior número existente, sem reutilizar lacunas.
 
 Os documentos serão apresentados como proposta e resumidos no chat com links
-ou caminhos reais para consulta. Após revisão e aprovação explícita da revisão
+ou caminhos reais para consulta. Após revisão e aprovação explícita registrada em `spec.md` para a revisão
 vigente, a implementação seguirá uma tarefa por vez, respeitando as regras
 do projeto e registrando evidências de testes e QA manual separadamente. Ao
 concluir cada task, o responsável atualiza o handoff do projeto para permitir
 retomada por outras pessoas; ao concluir a spec, consolida nele o estado final
 e as pendências. A regra e o conteúdo mínimo estão em [AGENTS.md](AGENTS.md).
 
-## License
-
-Licensed under the Apache License, Version 2.0.
-See the LICENSE file for details.

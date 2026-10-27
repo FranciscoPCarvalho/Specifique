@@ -1,17 +1,25 @@
 # Plano — {{SPEC_ID}} — {{SPEC_TITLE}}
 
-ID: `{{SPEC_ID}}` | Projeto: `{{PROJECT_ID}}` | Status: proposta | Revisão: 1 | Data: `{{DATE}}`  
-Aprovação da revisão vigente: pendente
+ID: `{{SPEC_ID}}`  
+Projeto: `{{PROJECT_ID}}`  
+Revisão da spec: 1  
+Data: `{{DATE}}`
 
-Fontes: [caminhos locais ou “a confirmar”]. Spec: [spec.md](spec.md). Tarefas: [tasks.md](tasks.md).
+Spec: [spec.md](spec.md) · Tarefas: [tasks.md](tasks.md)
+
+> Este plano é válido somente para a revisão indicada de `spec.md`. A autorização de execução é registrada exclusivamente na spec.
 
 ## Abordagem técnica
 
-[Explique arquitetura, modelagem, alternativas avaliadas e justificativas. Para descoberta, explique fontes, método de inspeção e entregáveis; não inclua modificações de código.]
+[Explique arquitetura, modelagem, alternativas avaliadas e justificativas. Para descoberta, explique fontes, método de inspeção e entregáveis; não inclua modificações de produto.]
 
-## Arquivos, componentes e impactos
+## Componentes e arquivos previstos para alteração
 
-[Partes afetadas, integrações, contratos, permissões e comportamento preservado; se incertos, marque como estimativa.]
+[Liste componentes/arquivos que o plano prevê modificar **após aprovação**. Diferencie estimativa de confirmação. Não trate esta lista como evidência de alteração já realizada.]
+
+## Impacto previsto
+
+[Domínio, persistência, interface, integrações, contratos, permissões, operação e comportamento preservado.]
 
 ## Sequência e dependências
 
@@ -19,28 +27,28 @@ Fontes: [caminhos locais ou “a confirmar”]. Spec: [spec.md](spec.md). Tarefa
 
 ## Ambiente e dados
 
-[Restrições de ambiente, acesso, dados sensíveis e autorização para operações.]
+[Restrições de ambiente, acesso, dados sensíveis e autorizações necessárias.]
 
 ## Migrações
 
 [Necessárias, não necessárias com justificativa, ou a confirmar.]
 
-## Testes automatizados
+## Estratégia de testes automatizados
 
 [Cenários, comandos previstos e resultados esperados. Estado inicial: não executados.]
 
 ## Validação manual/QA
 
-[Cenários, ambiente, responsável/confirmador quando conhecido. Estado inicial: não realizado.]
+[Cenários, ambiente e responsável/confirmador quando conhecido. Estado inicial: não realizado.]
 
 ## Riscos, mitigação e rollback
 
 [Reversibilidade, compatibilidade e impactos operacionais.]
 
-## Decisões e dúvidas pendentes
+## Decisões técnicas e alternativas
 
-[Sem decisões críticas pendentes antes de aprovar.]
+[Decisões derivadas da spec, alternativas relevantes e justificativas. Não transforme decisão pendente da spec em escolha unilateral.]
 
-## Revisão e aprovação
+## Observações de revisão
 
-- Revisão 1: proposta; aprovação pendente. Em mudança material, sincronizar revisão com spec.md e tasks.md.
+Revisão da spec referenciada: 1. Se houver mudança material na spec, atualize este plano para a nova revisão antes de executar.

@@ -1,20 +1,25 @@
 # Evolução do Microframework SDD
 
+## v0.2-r2 — proposta para revisão — 2026-10-27
+
+- Separação formal do ciclo em **inspeção → proposta → execução**.
+- `spec.md` definida como fonte única de revisão, estado e aprovação.
+- `plan.md` e `tasks.md` passam a referenciar a revisão vigente da spec.
+- Distinção entre decisões pendentes bloqueantes e pressupostos explícitos.
+- Separação entre documentos SDD efetivamente gerados e componentes previstos
+  para alteração após aprovação.
+- Critério para revisar uma spec ativa versus abrir uma nova spec.
+- Definição de mudança material e invalidação da aprovação anterior.
+- Aprovação em linguagem natural permitida quando inequívoca; aprovação com
+  mudança material gera nova revisão em vez de iniciar execução.
+- Handoff redefinido como representação do estado atual, não diário histórico.
+- Roteiro de validação atualizado para testar esses comportamentos.
+
 ## v0.2 — proposta para revisão — 2026-10-26
 
 - Intenção em linguagem natural para iniciar proposta, sem comando SDD explícito.
-- Resumo executivo obrigatório com nove seções e caminhos dos arquivos.
-- Gate de aprovação vinculada à revisão vigente de spec/plano/tasks.
-- Estados e controle de mudança propostos; separação de QA e execução.
-- Handoff conciso com referências, preservação de histórico nas migrações.
+- Resumo executivo obrigatório com caminhos dos arquivos.
+- Gate de aprovação vinculado à revisão vigente.
+- Estados e controle de mudança; separação de QA e execução.
+- Handoff conciso com referências e preservação de histórico nas migrações.
 - Templates atualizados e protocolo/roteiro de validação adicionados.
-- Política RTK histórica incluída para resolver link do README original.
-
-**Compatibilidade:** arquivos históricos e projetos existentes **não** foram
-alterados. A instalação v0.2 é opt-in por atualização dos blocos SDD; modelos
-locais personalizados permanecem preservados na reinicialização. Antes de
-usar os templates novos em projeto já inicializado, compare e migre seus
-modelos locais de maneira explícita, com backup.
-
-**Validação:** verificação estática do pacote; não houve teste de integração
-com Codex/Claude nem execução das aplicações, a realizar pelo roteiro.

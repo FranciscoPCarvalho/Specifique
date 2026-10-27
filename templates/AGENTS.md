@@ -10,85 +10,101 @@ subpasta. Não dependa de Git nem de caminhos absolutos de outra máquina.
 Consulte o [índice SDD]({{SDD_INDEX_LINK}}), a
 [documentação]({{SDD_DOCS_LINK}}), as [specs]({{SDD_SPECS_LINK}}) e os
 [templates]({{SDD_TEMPLATES_LINK}}), além do protocolo compartilhado em
-`{{SDD_ROOT_PATH}}/docs/protocolo-operacional.md`. Leia as regras locais da
-aplicação, a spec, o plano e as tarefas relevantes antes de trabalhar.
-Se a base estiver ausente/inacessível, informe qual vínculo falhou; não
-invente documentação, não procure nem clone outros repositórios. Para
-restaurar, abra o SDD e solicite reinicialização informando a aplicação.
+`{{SDD_ROOT_PATH}}/docs/protocolo-operacional.md`. Leia também as regras locais
+da aplicação. Em conflito, aplique a orientação mais restritiva e torne a
+divergência explícita.
 
-### Detectar intenção e preparar proposta
+Se a base SDD estiver ausente/inacessível, informe qual vínculo falhou; não
+invente documentação nem clone outro repositório para substituí-la.
 
-Não espere pelo comando “crie uma spec”. Mudanças funcionais, correções com
-impacto de comportamento e refatorações significativas, mesmo solicitadas em
-linguagem natural, acionam preparação de spec, plano e tarefas **antes da
-implementação**. Mapeamentos de arquitetura/rotas são specs de descoberta
-quando o usuário solicita tal entrega; sua execução investigativa também passa
-por aprovação do plano quando se propuser uma spec. Perguntas, leitura de
-código e explicações não exigem uma spec. Não crie uma nova spec se a solicitação
-pertencer claramente a uma spec ativa: proponha uma revisão nela, preservando
-histórico e rastreabilidade. Corrigir apenas formatação documental não implica
-mudança funcional; mantenha aprovações locais aplicáveis.
+### 1. Detectar intenção
 
-1. Entenda a demanda, consulte a documentação e inspecione estaticamente o
-   código pertinente; não altere implementação, execute a aplicação, instale
-   dependências nem faça migrações antes da autorização pertinente. Separe
-   fatos observados, hipóteses e propostas. Pergunte apenas o que impedir
-   delimitação segura do escopo; dúvidas importantes também podem constar da
-   proposta, que permanecerá bloqueada para aprovação até serem resolvidas.
-2. Leia os templates do projeto; calcule o próximo ID pelo maior prefixo
-   numérico das pastas em `specs/`, mais um (iniciando em `0001`). Preserve
-   IDs legados, não reutilize lacunas/IDs arquivados. Use no mínimo quatro
-   dígitos e slug minúsculo com hífens. Reconfira colisões antes de escrever.
-3. Crie `specs/NNNN-slug/spec.md`, `plan.md` e `tasks.md` com base nos
-   templates locais, substituindo `{{SPEC_ID}}`, `{{SPEC_TITLE}}`, `{{DATE}}`
-   e o identificador do projeto. Preencha a proposta conforme as evidências
-   disponíveis. Classifique a spec (funcionalidade, correção, refatoração,
-   descoberta ou migração documental) e use “não aplicável” com justificativa.
-4. Registre a spec no índice do projeto sem duplicação. Apresente
-   **automaticamente** no chat o resumo executivo: ID/título/status/revisão,
-   objetivo, requisitos/regras, plano técnico, impactos, critérios de aceite,
-   riscos e decisões pendentes, arquivos criados/alterados e próxima ação.
-   Referencie `spec.md`, `plan.md` e `tasks.md` com caminhos reais, links
-   navegáveis quando suportados e caminhos literais em todos os casos.
-   Não invente links nem afirme que o editor os abrirá sem suporte.
-5. Solicite revisão e aprovação **explícita** da revisão atual. Se o usuário
-   pedir alterações, atualize os artefatos pertinentes, incremente a revisão,
-   apresente diferenças relevantes e peça nova aprovação. Nenhuma criação de
-   documento significa aprovação ou início da implementação.
+Não espere pelo comando “crie uma spec”. Mudanças funcionais, correções de
+comportamento e refatorações relevantes acionam o fluxo SDD. Mapeamentos de
+arquitetura/rotas podem ser specs de descoberta. Perguntas, explicações e
+leitura sem alteração não exigem spec.
 
-### Aprovação, implementação e controle de mudança
+Se a demanda continua perseguindo o mesmo objetivo de uma spec ativa, proponha
+revisão dessa spec. Abra nova spec quando houver novo objetivo, workflow ou
+conjunto independente de critérios de aceite.
 
-Estados de spec: `proposta` → `em revisão` → `aprovada` → `em execução` →
-`implementada` → `concluída`; `bloqueada` e `cancelada` são alternativas
-justificadas, conforme o protocolo central. Somente uma revisão aprovada da
-spec, plano **e** tarefas autoriza a execução correspondente. Registre
-revisão, aprovador/manifestação e data quando conhecidos; sem evidência, deixe
-como pendente. Documentação histórica não vale como aprovação da demanda atual.
+### 2. Inspecionar antes de propor
 
-Execute uma task por vez, seguindo dependências, e registre evidências,
-comandos/testes e resultados. Diferencie implementação técnica, testes
-automatizados e QA manual. QA manual requer confirmação explícita ou indicação
-justificada de “não aplicável”. Não declare testes, deploy, commit ou aprovação
-sem prova. Mudanças materiais de escopo, requisitos, dados, segurança ou
-arquitetura exigem nova revisão da proposta e autorização antes de seguir na
-parte afetada. Uma spec de descoberta não autoriza alterar o produto.
+Na fase de inspeção, leia apenas o necessário para compreender contexto,
+regras, arquitetura e impacto. Diferencie fatos observados, informação do
+usuário, hipóteses e propostas.
 
-### Sincronização e handoff
+Antes da aprovação, não altere código da aplicação, instale dependências,
+execute migrações, modifique dados, faça deploy ou execute operações destrutivas.
+Execução de aplicação/testes prévia só é permitida quando as regras locais a
+autorizarem explicitamente e ela for necessária para fundamentar a proposta.
 
-Ao concluir tecnicamente cada task: atualize `tasks.md` com resultado e
-referências; confira consistência entre requisitos, plano e tarefas; registre
-desvios para revisão em vez de mudar a spec silenciosamente; atualize handoff
-da aplicação (`handoff.md`, `HANDOFF.md` ou nome adotado) com **estado atual**,
-**próxima ação**, **impedimentos** e **referências** para detalhes. Ao concluir
-uma spec, consolide a situação e pendências; mantenha QA manual pendente
-visível, inclusive se a implementação técnica estiver pronta. Não transforme
-o handoff em diário de milhares de linhas: registros longos ficam nas tasks ou
-nos docs temáticos, com links.
+### 3. Preparar e apresentar a proposta
 
-Preserve instruções e fatos existentes. Migração/compactação de handoff exige
-preservar o histórico original antes de resumir e conferir que informações
-relevantes continuam recuperáveis. Se não houver handoff, crie um Markdown
-curto na raiz da aplicação e registre seu caminho no índice e nas tasks. Se o
-checkout/arquivo não estiver disponível, registre a limitação e mantenha a
-sincronização como pendente, sem alegar conclusão documental total.
+Use os templates locais para criar/revisar `spec.md`, `plan.md` e `tasks.md`.
+`spec.md` é a autoridade de estado, revisão e aprovação. `plan.md` e `tasks.md`
+referenciam a revisão vigente da spec.
+
+Ao criar nova spec, use o próximo ID após o maior prefixo numérico existente em
+`specs/`, iniciando em `0001`, sem reutilizar lacunas. Preserve IDs legados.
+
+Apresente automaticamente no chat, de forma proporcional à complexidade:
+
+- ID, título, revisão e status;
+- objetivo;
+- requisitos e regras de negócio;
+- escopo e, quando relevante, fora de escopo;
+- plano técnico;
+- impacto previsto;
+- critérios de aceite e validação;
+- riscos;
+- decisões pendentes;
+- pressupostos relevantes;
+- documentos SDD efetivamente criados/alterados;
+- componentes/arquivos previstos para alteração após aprovação;
+- próxima ação: revisar, solicitar ajustes ou aprovar.
+
+Mostre caminhos reais dos documentos e links navegáveis quando o ambiente
+suportar. Não invente links nem apresente arquivos previstos como já alterados.
+
+### 4. Gate de aprovação
+
+Somente uma aprovação explícita da revisão vigente registrada em `spec.md`
+autoriza implementação. Linguagem natural inequívoca é válida quando houver uma
+única proposta em contexto. Silêncio, criação dos documentos ou aprovação
+histórica não autorizam execução.
+
+**Decisões pendentes** críticas bloqueiam aprovação. **Pressupostos** podem ser
+aceitos junto com a proposta quando estiverem visíveis e não esconderem decisão
+de negócio, segurança, dados ou arquitetura relevante.
+
+Se o usuário aprovar e ao mesmo tempo solicitar mudança material, atualize a
+proposta, incremente a revisão e peça nova aprovação antes de implementar.
+Mudança material inclui requisito, aceite, escopo, contrato, dados, segurança,
+arquitetura ou dependência relevante.
+
+### 5. Executar e registrar evidências
+
+Após aprovação, execute uma task por vez e respeite dependências. Registre em
+`tasks.md` alterações reais, comandos, resultados, limitações, testes e QA.
+Não declare teste, QA, commit, deploy ou homologação sem evidência.
+
+Se a implementação exigir desvio material, suspenda a parte afetada e volte à
+revisão. Não altere `spec.md` apenas para fazer o requisito coincidir com o
+código produzido.
+
+### 6. Sincronizar o handoff
+
+Após cada task tecnicamente concluída, atualize o handoff para representar o
+**estado atual**, não para acrescentar um diário. Inclua spec/revisão ativa,
+estado, última task, próxima ação, bloqueios, testes/QA e referências aos
+artefatos detalhados.
+
+Histórico extenso deve permanecer em `tasks.md` ou docs especializados. Em
+migração de handoff legado, preserve a fonte original antes de compactar e
+verifique a recuperabilidade de decisões, pendências e evidências.
+
+Se não houver handoff, crie um Markdown curto na raiz da aplicação. Se ele ou
+o checkout estiver inacessível, registre a sincronização como pendente e não
+alegue conclusão documental completa.
 <!-- SDD:END -->
